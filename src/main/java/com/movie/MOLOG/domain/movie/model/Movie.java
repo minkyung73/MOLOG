@@ -2,6 +2,7 @@ package com.movie.MOLOG.domain.movie.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -10,21 +11,23 @@ import java.util.List;
 
 @Entity
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
 
     @Id
     @Column(name = "movie_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
-    private String movie_name;
+    private String title;
+    private Integer year;
 
+    private String genre;
     private String director;
 
-    private String stars;   // List<String> 가능한지
+    private String actors;
 
-    private String movieImgUrl;
+    private String posterUrl;
 
 }
